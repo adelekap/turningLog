@@ -2,5 +2,5 @@
 
 def turn(turns,curTurns):
     totalTurns = curTurns + turns
-    depth = totalTurns * 40.0
-    return (totalTurns,depth)
+    depth = float(totalTurns) * 39.626
+    return (totalTurns,int(depth))
