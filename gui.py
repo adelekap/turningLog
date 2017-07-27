@@ -2,6 +2,7 @@ from getCurrentInfo import *
 
 def get_rat():
     ratForm = Tk()
+    ratForm.title("Choose Rat")
 
     Label(ratForm, text='RAT:', font=('Helvetica', 14, "bold")).grid(row=0, column=0)
     rat = Entry(ratForm, width=5)
@@ -49,6 +50,7 @@ def save_turn_data():
 
 
 master = Tk()
+master.title("Turning Log")
 
 
 ################## COLUMN 0 ###############################
