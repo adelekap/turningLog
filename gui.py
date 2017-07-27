@@ -1,4 +1,5 @@
 from getCurrentInfo import *
+import sys
 
 def get_rat():
     ratForm = Tk()
@@ -17,7 +18,8 @@ def get_rat():
     return (rat.get(),date.get())
 
 
-path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
+#path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
+path = sys.argv[1:][0]
 rat,date = get_rat()
 
 depths,positions,totTurns = getCurrent(path,rat,date)
