@@ -6,7 +6,19 @@ def getCurrent(path,rat):
 
     depths = list(info['Depth'])
     positions = list(info['Direction'])
+    totalTurns = list(info['Total Turns'])
 
-    return (depths,positions)
+    return (depths,positions,totalTurns)
+
+def total(past,new):
+    return int(past)+int(new)
+
+def turnDepth(totalTurns):
+    depth = float(totalTurns) * 39.63
+    return int(depth)
+
+
+
+
 
 
