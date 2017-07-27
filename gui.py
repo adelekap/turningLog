@@ -1,8 +1,12 @@
 from tkinter import *
 from getCurrentInfo import *
+from tkFont import Font
 
 path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
 rat = raw_input('Rat: ')
+depths,positions = getCurrent(path,rat)
+tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
+
 
 def show_entry_fields():
     firstname = tt1Turns.get()
@@ -12,30 +16,26 @@ def show_entry_fields():
 
 master = Tk()
 
-depths,positions = getCurrent(path,rat)
-
-tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
-
 
 ################## COLUMN 0 ###############################
 for tLabel in range(0,14):
-    Label(master, text=tetrodes[tLabel]).grid(row=tLabel+1,column=0)
+    Label(master, text=tetrodes[tLabel],font=('Helvetica',16, "bold")).grid(row=tLabel+1,column=0)
 
 
 ################## COLUMN 1 ###############################
-Label(master, text='Current Depth').grid(row=0, column=1)
+Label(master, text='Current Depth',font=('Helvetica',15, "bold")).grid(row=0, column=1)
 for t in range(0,14):
-    Label(master, text=depths[t]).grid(row=t+1,column=1)
+    Label(master, text=depths[t],font=('Helvetica',14)).grid(row=t+1,column=1)
 
 
 ################## COLUMN 2 ###############################
-Label(master, text='Current Position').grid(row=0, column=2)
+Label(master, text='Current Position',font=('Helvetica',15, "bold")).grid(row=0, column=2)
 for tt in range(0,14):
-    Label(master, text=positions[tt]).grid(row=tt+1,column=2)
+    Label(master, text=positions[tt],font=('Helvetica',14)).grid(row=tt+1,column=2)
 
 
 ################## COLUMN 3 ###############################
-Label(master, text='Eighths Turned').grid(row=0, column=3)
+Label(master, text='Eighths Turned',font=('Helvetica',15, "bold")).grid(row=0, column=3)
 tt1Turns = Entry(master, width=3).grid(row=1, column=3)
 tt2Turns = Entry(master, width=3).grid(row=2, column=3)
 tt3Turns = Entry(master, width=3).grid(row=3, column=3)
@@ -53,7 +53,7 @@ r2Turns = Entry(master, width=3).grid(row=14, column=3)
 
 
 ################## COLUMN 4 ###############################
-Label(master, text='New Position').grid(row=0, column=4)
+Label(master, text='New Position',font=('Helvetica',15, "bold")).grid(row=0, column=4)
 tt1Pos = Entry(master, width=3).grid(row=1, column=4)
 tt2Pos = Entry(master, width=3).grid(row=2, column=4)
 tt3Pos = Entry(master, width=3).grid(row=3, column=4)
