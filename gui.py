@@ -1,12 +1,11 @@
-from tkinter import *
 from getCurrentInfo import *
-from tkFont import Font
+
 
 path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
 rat = raw_input('Rat: ')
 date = raw_input('Date {YYYY-MM-DD}: ')
 
-depths,positions,totTurns = getCurrent(path,rat)
+depths,positions,totTurns = getCurrent(path,rat,date)
 tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
 
 
@@ -19,7 +18,8 @@ def save_turn_data():
     newPositions=[tt1Pos.get(),tt2Pos.get(),tt3Pos.get(),tt4Pos.get(),tt5Pos.get(),tt6Pos.get(),
                   tt7Pos.get(),tt8Pos.get(),tt9Pos.get(),tt10Pos.get(),tt11Pos.get(),tt12Pos.get(),
                   r1Pos.get(),r2Pos.get()]
-    notes = []
+    notes = [tt1Notes.get(),tt2Notes.get(),tt3Notes.get(),tt4Notes.get(),tt5Notes.get(),tt6Notes.get(),tt7Notes.get(),
+             tt8Notes.get(),tt9Notes.get(),tt10Notes.get(),tt11Notes.get(),tt12Notes.get(),r1Notes.get(),r2Notes.get()]
     with open(currentFile,'w') as current:
         with open(logFile,'w') as log:
             current.write('TT,Direction,Total Turns,Depth,Updated\n')
@@ -28,7 +28,7 @@ def save_turn_data():
                 newTotal = total(totTurns[tet],turns[tet])
                 newDepth = turnDepth(newTotal)
                 current.write('{0},{1},{2},{3},{4}\n'.format(tetrodes[tet],newPositions[tet],newTotal,newDepth,date))
-                log.write('{0},{1},{2},{3},{4},{5},{6}\n'.format(tetrodes[tet],depths[tet],positions[tet],turns[tet],
+                log.write('{0},{1},{2},{3},{4},{5},{6},{7}\n'.format(tetrodes[tet],depths[tet],positions[tet],turns[tet],
                                                                  newPositions[tet],newTotal,newDepth,notes[tet]))
 
     master.quit()

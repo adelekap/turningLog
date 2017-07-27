@@ -4,12 +4,12 @@ from tkinter import *
 
 tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
 
+
+
 def getInitial():
     master = Tk()
-
     for tLabel in range(0, 14):
         Label(master, text=tetrodes[tLabel], font=('Helvetica', 16, "bold")).grid(row=tLabel + 1, column=0)
-
     Label(master, text='Starting Position', font=('Helvetica', 15, "bold")).grid(row=0, column=1)
     tt1Start = Entry(master, width=3)
     tt1Start.grid(row=1, column=1)
@@ -40,27 +40,32 @@ def getInitial():
     r2Start = Entry(master, width=3)
     r2Start.grid(row=14, column=1)
 
-    Label(master, text='Date', font=('Helvetica', 15, "bold")).grid(row=15, column=0,pady=15)
-    dateEntry = Entry(master, width=8)
-    dateEntry.grid(row=15, column=1, pady=15)
+    startPos= [tt1Start,tt2Start,tt3Start,tt4Start,tt5Start,tt6Start,tt7Start,tt8Start,tt9Start,tt10Start,
+               tt11Start,tt12Start,r1Start,r2Start]
 
     Button(master, text='Quit', command=master.quit).grid(row=16, column=0, sticky=W, pady=4)
-    Button(master, text='Submit', command=save_Initial).grid(row=16, column=2, sticky=W, pady=4)
+    Button(master, text='Submit', command=master.quit).grid(row=16, column=2 , sticky=W, pady=4)
 
     mainloop()
+    return [l.get() for l in startPos]
 
 
-def save_Initial():
-    pass
-
-def getCurrent(path,rat):
+def getCurrent(path,rat,date):
+    dir = path+rat
     file = path+rat+'/current_'+rat+'.csv'
 
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
     if os.path.exists(file):
         info = pd.read_csv(file)
     else:
         with open(file,'w') as create:
             create.write('TT,Direction,Total Turns,Depth,Updated\n')
+            starting = getInitial()
+            for tetr in range(0,14):
+                create.write('{0},{1},0,0,{2}\n'.format(tetrodes[tetr],starting[tetr],date))
+        info = pd.read_csv(file)
+
 
 
     depths = list(info['Depth'])
@@ -76,7 +81,6 @@ def turnDepth(totalTurns):
     depth = float(totalTurns) * 39.63
     return int(depth)
 
-getInitial()
 
 
 
