@@ -52,5 +52,4 @@ def updateCurrent(curStats1):
                 confirm = raw_input("Confirm input? (Y/N)")
 
 
-
 updateCurrent(getCurrent())
