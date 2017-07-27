@@ -19,16 +19,17 @@ def save_turn_data():
     newPositions=[tt1Pos.get(),tt2Pos.get(),tt3Pos.get(),tt4Pos.get(),tt5Pos.get(),tt6Pos.get(),
                   tt7Pos.get(),tt8Pos.get(),tt9Pos.get(),tt10Pos.get(),tt11Pos.get(),tt12Pos.get(),
                   r1Pos.get(),r2Pos.get()]
+    notes = []
     with open(currentFile,'w') as current:
         with open(logFile,'w') as log:
             current.write('TT,Direction,Total Turns,Depth,Updated\n')
-            log.write('TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth\n')
+            log.write('TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes\n')
             for tet in range(0,14):
                 newTotal = total(totTurns[tet],turns[tet])
                 newDepth = turnDepth(newTotal)
                 current.write('{0},{1},{2},{3},{4}\n'.format(tetrodes[tet],newPositions[tet],newTotal,newDepth,date))
                 log.write('{0},{1},{2},{3},{4},{5},{6}\n'.format(tetrodes[tet],depths[tet],positions[tet],turns[tet],
-                                                                 newPositions[tet],newTotal,newDepth))
+                                                                 newPositions[tet],newTotal,newDepth,notes[tet]))
 
     master.quit()
 
@@ -117,9 +118,42 @@ r2Pos = Entry(master, width=3)
 r2Pos.grid(row=14, column=4)
 
 
+################## COLUMN 5 ###############################
+Label(master, text='Notes',font=('Helvetica',15, "bold")).grid(row=0, column=5)
+tt1Notes = Entry(master, width=10)
+tt1Notes.grid(row=1, column=5)
+tt2Notes = Entry(master, width=10)
+tt2Notes.grid(row=2, column=5)
+tt3Notes = Entry(master, width=10)
+tt3Notes.grid(row=3, column=5)
+tt4Notes = Entry(master, width=10)
+tt4Notes.grid(row=4, column=5)
+tt5Notes = Entry(master, width=10)
+tt5Notes.grid(row=5, column=5)
+tt6Notes = Entry(master, width=10)
+tt6Notes.grid(row=6, column=5)
+tt7Notes = Entry(master, width=10)
+tt7Notes.grid(row=7, column=5)
+tt8Notes = Entry(master, width=10)
+tt8Notes.grid(row=8, column=5)
+tt9Notes = Entry(master, width=10)
+tt9Notes.grid(row=9,column=5)
+tt10Notes = Entry(master, width=10)
+tt10Notes.grid(row=10, column=5)
+tt11Notes= Entry(master, width=10)
+tt11Notes.grid(row=11, column=5)
+tt12Notes = Entry(master, width=10)
+tt12Notes.grid(row=12, column=5)
+r1Notes = Entry(master, width=10)
+r1Notes.grid(row=13, column=5)
+r2Notes = Entry(master, width=10)
+r2Notes.grid(row=14, column=5)
+
+
+
 ################## BUTTONS ###############################
-Button(master, text='Quit', command=master.quit).grid(row=15, column=1, sticky=W, pady=4)
-Button(master, text='Submit', command=save_turn_data).grid(row=15, column=3, sticky=W, pady=4)
+Button(master, text='Quit', command=master.quit).grid(row=16, column=2, sticky=W, pady=4)
+Button(master, text='Submit', command=save_turn_data).grid(row=16, column=4, sticky=W, pady=4)
 
 
-mainloop( )
+mainloop()
