@@ -1,9 +1,23 @@
 from getCurrentInfo import *
 
+def get_rat():
+    ratForm = Tk()
+
+    Label(ratForm, text='RAT:', font=('Helvetica', 14, "bold")).grid(row=0, column=0)
+    rat = Entry(ratForm, width=5)
+    rat.grid(row=0, column=1)
+    Label(ratForm, text='DATE {YYYY-MM-DD}:', font=('Helvetica',14, "bold")).grid(row=1, column=0)
+    date = Entry(ratForm, width=10)
+    date.grid(row=1,column=1,pady=10)
+
+    Button(ratForm, text='CONFIRM', command=ratForm.quit).grid(row=2, column=2, sticky=W, pady=4)
+
+    mainloop()
+    return (rat.get(),date.get())
+
 
 path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
-rat = raw_input('Rat: ')
-date = raw_input('Date {YYYY-MM-DD}: ')
+rat,date = get_rat()
 
 depths,positions,totTurns = getCurrent(path,rat,date)
 tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']

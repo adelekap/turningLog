@@ -5,7 +5,6 @@ from tkinter import *
 tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
 
 
-
 def getInitial():
     master = Tk()
     for tLabel in range(0, 14):
