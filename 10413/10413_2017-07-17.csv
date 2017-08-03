@@ -1,0 +1,15 @@
+TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes
+TT1,1426,NE,1,E,37,1466,cell
+TT2,1506,S,2,W,40,1585,small cell
+TT3,1506,S,0,S,38,1506,lots of fast spiking cells
+TT4,1506,S,1,SW,39,1545,cell
+TT5,1347,N,2,E,36,1426,low activity
+TT6,1506,S,6,E,44,1743,silent
+TT7,1426,N,4,S,40,1585,might have something
+TT8,1506,E,0,E,38,1506,might have cell
+TT9,1585,S,4,N,44,1743,lots of noise
+TT10,1506,E,4,W,42,1664,two cells
+TT11,1506,E,4,W,42,1664,silent
+TT12,1506,E,2,S,40,1585,two cells?
+R1,1506,S,4,N,42,1664,
+R2,1426,E,0,E,36,1426,

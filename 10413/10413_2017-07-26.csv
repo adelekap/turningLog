@@ -1,0 +1,15 @@
+TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes
+TT1,2021,N,2,E,53,2100,cell
+TT2,2140,S,3,NW,57,2259,cell
+TT3,1902,W,7,SW,55,2179,quiet
+TT4,1823,S,0,S,46,1823,cell
+TT5,2179,SW,0,SW,55,2179,cell
+TT6,2179,SW,5,E,60,2378,silent
+TT7,1902,S,2,W,50,1981,cell
+TT8,1902,S,1,SW,49,1942,multiple cells
+TT9,1981,W,0,W,50,1981,cell
+TT10,2021,NW,3,E,54,2140,cell
+TT11,2140,E,2,S,56,2219,cell
+TT12,1823,E,0,E,46,1823,cells
+R1,2615,N,4,S,70,2774,
+R2,1426,E,2,S,38,1506,

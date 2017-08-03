@@ -1,5 +1,5 @@
 from getCurrentInfo import *
-import sys
+
 
 def get_rat():
     ratForm = Tk()
@@ -19,7 +19,9 @@ def get_rat():
 
 
 #path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
-path = sys.argv[1:][0]
+#path = sys.argv[1:][0]
+path='/Users/adelekap/Documents/turningLog/'
+
 rat,date = get_rat()
 
 depths,positions,totTurns = getCurrent(path,rat,date)
@@ -52,7 +54,7 @@ def save_turn_data():
 
 
 master = Tk()
-master.title("Turning Log")
+master.title("Turning Log "+date)
 
 
 ################## COLUMN 0 ###############################
@@ -168,10 +170,37 @@ r2Notes = Entry(master, width=10)
 r2Notes.grid(row=14, column=5)
 
 
+def calc_turns(oldDir,newDir):
+    directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
+    oldIndex = directions.index(oldDir)
+    newIndex = directions.index(newDir)
+    delta = newIndex - oldIndex
+    if delta < 0:
+        return str(8+delta)
+    else:
+        return str(delta)
+
+def fill_info():
+    tt1Turns.insert(0,calc_turns(positions[0],tt1Pos.get()))
+    tt2Turns.insert(0,calc_turns(positions[1],tt2Pos.get()))
+    tt3Turns.insert(0,calc_turns(positions[2],tt3Pos.get()))
+    tt4Turns.insert(0,calc_turns(positions[3],tt4Pos.get()))
+    tt5Turns.insert(0,calc_turns(positions[4],tt5Pos.get()))
+    tt6Turns.insert(0,calc_turns(positions[5],tt6Pos.get()))
+    tt7Turns.insert(0,calc_turns(positions[6],tt7Pos.get()))
+    tt8Turns.insert(0,calc_turns(positions[7],tt8Pos.get()))
+    tt9Turns.insert(0,calc_turns(positions[8],tt9Pos.get()))
+    tt10Turns.insert(0,calc_turns(positions[9],tt10Pos.get()))
+    tt11Turns.insert(0,calc_turns(positions[10],tt11Pos.get()))
+    tt12Turns.insert(0,calc_turns(positions[11],tt12Pos.get()))
+    r1Turns.insert(0,calc_turns(positions[12],r1Pos.get()))
+    r2Turns.insert(0,calc_turns(positions[13],r2Pos.get()))
+
+
 
 ################## BUTTONS ###############################
-Button(master, text='Quit', command=master.quit).grid(row=16, column=2, sticky=W, pady=4)
-Button(master, text='Submit', command=save_turn_data).grid(row=16, column=4, sticky=W, pady=4)
+Button(master, text='Submit', command=save_turn_data).grid(row=16, column=5, sticky=W, pady=4)
+Button (master, text='Auto Fill', command=fill_info).grid(row=16, column=3, sticky=W, pady=4)
 
 
 mainloop()

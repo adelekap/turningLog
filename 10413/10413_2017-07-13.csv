@@ -1,0 +1,15 @@
+TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes
+TT1,1347,N,2,NE,36,1426,beautiful cell
+TT2,1347,N,4,S,38,1506,slightly more activity
+TT3,1347,N,4,S,38,1506,slightly more activity
+TT4,1347,N,4,S,38,1506,big cell
+TT5,1347,N,0,N,34,1347,cells
+TT6,1347,N,4,S,38,1506,cells
+TT7,1307,SW,3,N,36,1426,noise
+TT8,1347,W,4,E,38,1506,noise
+TT9,1426,N,4,S,40,1585,cells
+TT10,1347,W,4,E,38,1506,cells
+TT11,1347,W,4,E,38,1506,noise
+TT12,1347,W,4,E,38,1506,cells
+R1,1347,N,4,S,38,1506,
+R2,1268,W,4,E,36,1426,referencing

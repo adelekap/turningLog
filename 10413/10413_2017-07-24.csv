@@ -1,0 +1,15 @@
+TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes
+TT1,1783,E,2,S,47,1862,quiet
+TT2,1902,W,4,E,52,2061,quiet
+TT3,1664,N,4,S,46,1823,might have something
+TT4,1743,E,0,E,44,1743,cells
+TT5,1902,W,4,E,52,2061,quiet
+TT6,1902,W,4,E,52,2061,quiet
+TT7,1743,N,1,NE,45,1783,might have something
+TT8,1625,SW,3,N,44,1743,cell
+TT9,1902,S,0,S,48,1902,cell but noisy
+TT10,1823,E,2,S,48,1902,something small
+TT11,1902,S,4,N,52,2061,nothing
+TT12,1664,W,3,NE,45,1783,
+R1,2298,N,4,S,62,2457,
+R2,1426,E,0,E,36,1426,
