@@ -1,0 +1,15 @@
+TT,Old Depth,Old Direction,Turns,New Direction,Total Turns,New Depth,Notes
+TT1,2338,N,4,S,63,2497,
+TT2,2536,SW,4,NE,68,2695,
+TT3,2457,S,7,SE,69,2734,Something small
+TT4,1823,S,0,S,46,1823,Multiple cells
+TT5,2298,N,6,W,64,2536,
+TT6,2695,E,4,W,72,2853,
+TT7,2140,E,6,N,60,2378,
+TT8,1942,SW,3,N,52,2061,Cell fires infrequently
+TT9,1981,W,0,W,50,1981,Multiple cells
+TT10,2140,E,0,E,54,2140,Good cell
+TT11,2536,S,4,N,68,2695,
+TT12,1981,W,6,S,56,2219,
+R1,3091,S,4,N,82,3250,
+R2,1506,S,0,S,38,1506,

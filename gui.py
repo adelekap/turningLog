@@ -18,8 +18,6 @@ def get_rat():
     return (rat.get(),date.get())
 
 
-#path = '/Volumes/TRANS 1/BarnesLab/TurningLogs/'
-#path = sys.argv[1:][0]
 path='/Users/adelekap/Documents/turningLog/'
 
 rat,date = get_rat()
@@ -195,8 +193,6 @@ def fill_info():
     tt12Turns.insert(0,calc_turns(positions[11],tt12Pos.get()))
     r1Turns.insert(0,calc_turns(positions[12],r1Pos.get()))
     r2Turns.insert(0,calc_turns(positions[13],r2Pos.get()))
-
-
 
 ################## BUTTONS ###############################
 Button(master, text='Submit', command=save_turn_data).grid(row=16, column=5, sticky=W, pady=4)
