@@ -1,6 +1,6 @@
 from getCurrentInfo import *
 
-path="C:\\Users\\akoutia\\Documents\\turningLog\\"
+path="C:\\Users\\akoutia\\Documents\\Barnes Lab\\turningLog\\"
 
 def get_rat():
     ratForm = Tk()
