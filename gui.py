@@ -1,5 +1,6 @@
 from getCurrentInfo import *
 
+path="C:\\Users\\akoutia\\Documents\\turningLog\\"
 
 def get_rat():
     ratForm = Tk()
@@ -18,7 +19,7 @@ def get_rat():
     return (rat.get(),date.get())
 
 
-path='/Users/adelekap/Documents/turningLog/'
+
 
 rat,date = get_rat()
 

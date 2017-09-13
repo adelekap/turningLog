@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from tkinter import *
+from Tkinter import *
 
 tetrodes = ['TT1','TT2','TT3','TT4','TT5','TT6','TT7','TT8','TT9','TT10','TT11','TT12','R1','R2']
 
